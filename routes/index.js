@@ -4,5 +4,6 @@ const usersController=require("../controllers/usersController");
 /* GET home page. */
 
 router.get('/get_users', usersController.get_users);
+router.post('/add_user', usersController.add_user);
 
 module.exports = router;
