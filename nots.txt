@@ -1,0 +1,7 @@
+1- npx express-generator
+2- cretaet database at postgrsql
+3- npm i sequelize
+4- npm i dotenv
+5- npm i nodemon
+6- npm i express
+7- npm i pg   
