@@ -10,8 +10,7 @@ const HomePage=()=>{
     const classes = useStyles();
 
     const getUsers=()=>{
-
-        getData("http://localhost:3000/api/get_users")
+        getData("http://localhost:4000/api/get_users")
         .then((res)=>{
             setUsers(res);
             console.log(res)
