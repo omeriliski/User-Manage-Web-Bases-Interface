@@ -39,3 +39,25 @@ exports.delete_user = async(req,res,next)=>{
         
     }
 }
+
+exports.update_user = async(req,res,next)=>{
+    try {
+        const user = await User.findOne({
+            where:{
+                id:req.params.id
+            }
+        });
+        user.first_name = req.body.first_name;
+        user.last_name = req.body.last_name,
+        user.user_name = req.body.user_name,
+        user.email = req.body.email,
+        user.date_of_birth = req.body.date_of_birth,
+        user.password = req.body.password,
+        user.last_login = req.body.last_login
+        await user.save();
+        res.send(user);
+        console.log("user",user);
+    } catch (error) {
+        res.send(error);
+    }
+}
