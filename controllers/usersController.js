@@ -26,3 +26,16 @@ exports.add_user = async(req,res,next)=>{
         res.send(error);
     }
 }
+
+exports.delete_user = async(req,res,next)=>{
+    try {
+        await User.destroy({
+            where:{
+                id:req.params.id
+            }
+        })
+        res.send("user successfully deleted")
+    } catch (error) {
+        
+    }
+}
